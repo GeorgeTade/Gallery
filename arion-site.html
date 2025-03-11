@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Έκθεση Ζωγραφικής</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Έκθεση Ζωγραφικής</h1>
+    <div class="gallery" id="gallery"></div>
+
+    <script>
+        const paintings = [
+            { src: "image1.jpg", description: "Περιγραφή για τον πίνακα 1" },
+            { src: "image2.jpg", description: "Περιγραφή για τον πίνακα 2" },
+            { src: "image3.jpg", description: "Περιγραφή για τον πίνακα 3" },
+            { src: "image4.jpg", description: "Περιγραφή για τον πίνακα 4" },
+            { src: "image5.jpg", description: "Περιγραφή για τον πίνακα 5" },
+            { src: "image6.jpg", description: "Περιγραφή για τον πίνακα 6" },
+            { src: "image7.jpg", description: "Περιγραφή για τον πίνακα 7" },
+            { src: "image8.jpg", description: "Περιγραφή για τον πίνακα 8" },
+            { src: "image9.jpg", description: "Περιγραφή για τον πίνακα 9" },
+            { src: "image10.jpg", description: "Περιγραφή για τον πίνακα 10" },
+            { src: "image11.jpg", description: "Περιγραφή για τον πίνακα 11" },
+            { src: "image12.jpg", description: "Περιγραφή για τον πίνακα 12" },
+            { src: "image13.jpg", description: "Περιγραφή για τον πίνακα 13" },
+            { src: "image14.jpg", description: "Περιγραφή για τον πίνακα 14" },
+            { src: "image15.jpg", description: "Περιγραφή για τον πίνακα 15" }
+        ];
+
+        const gallery = document.getElementById("gallery");
+        paintings.forEach(painting => {
+            const item = document.createElement("div");
+            item.classList.add("gallery-item");
+            item.innerHTML = `<img src="${painting.src}" alt="Painting"><p class="description">${painting.description}</p>`;
+            gallery.appendChild(item);
+        });
+    </script>
+</body>
+</html>
